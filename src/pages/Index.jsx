@@ -12,20 +12,6 @@ function Index() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 space-y-4">
-      <Card className="w-full max-w-md">
-        <CardHeader>
-          <CardTitle>Welcome to the Bare-Bones App</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-center mb-4">This is a simple counter application.</p>
-          <div className="flex justify-center items-center space-x-4">
-            <Button onClick={() => setCount(count - 1)}>-</Button>
-            <span className="text-2xl">{count}</span>
-            <Button onClick={() => setCount(count + 1)}>+</Button>
-          </div>
-        </CardContent>
-      </Card>
-
       {capabilities.map((capability, index) => (
         <Card key={index} className="w-full max-w-md">
           <CardHeader>
