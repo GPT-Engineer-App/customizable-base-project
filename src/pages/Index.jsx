@@ -11,7 +11,7 @@ function Index() {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 space-y-4">
+    <div className="flex flex-col items-center justify-start min-h-screen space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {capabilities.map((capability, index) => (
           <Card key={index} className="w-full self-start">
