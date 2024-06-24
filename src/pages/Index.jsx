@@ -12,16 +12,18 @@ function Index() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 space-y-4">
-      {capabilities.map((capability, index) => (
-        <Card key={index} className="w-full max-w-md">
-          <CardHeader>
-            <CardTitle>{capability.title}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p>{capability.description}</p>
-          </CardContent>
-        </Card>
-      ))}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {capabilities.map((capability, index) => (
+          <Card key={index} className="w-full">
+            <CardHeader>
+              <CardTitle>{capability.title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>{capability.description}</p>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
     </div>
   );
 }
