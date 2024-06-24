@@ -29,8 +29,17 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { useLocation } from "react-router-dom";
 
 function SharedLayout({ children }) {
+  const location = useLocation();
+
+  const getNavItemClass = (path) => {
+    return location.pathname === path
+      ? "flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary"
+      : "flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary";
+  };
+
   return (
     <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
       <div className="hidden border-r bg-muted/40 md:block">
@@ -43,24 +52,15 @@ function SharedLayout({ children }) {
           </div>
           <div className="flex-1">
             <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
-              <a
-                href="/"
-                className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary"
-              >
+              <a href="/" className={getNavItemClass("/")}>
                 <Home className="h-4 w-4" />
                 Home
               </a>
-              <a
-                href="/talk-to-pdf"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
+              <a href="/talk-to-pdf" className={getNavItemClass("/talk-to-pdf")}>
                 <Package className="h-4 w-4" />
                 Talk to PDF
               </a>
-              <a
-                href="/scrape-site"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
+              <a href="/scrape-site" className={getNavItemClass("/scrape-site")}>
                 <Package className="h-4 w-4" />
                 Scrape a site
               </a>
@@ -83,31 +83,19 @@ function SharedLayout({ children }) {
             </SheetTrigger>
             <SheetContent side="left" className="flex flex-col">
               <nav className="grid gap-2 text-lg font-medium">
-                <a
-                  href="/"
-                  className="flex items-center gap-2 text-lg font-semibold"
-                >
+                <a href="/" className="flex items-center gap-2 text-lg font-semibold">
                   <Package2 className="h-6 w-6" />
                   <span className="sr-only">Acme Inc</span>
                 </a>
-                <a
-                  href="/"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                >
+                <a href="/" className={getNavItemClass("/")}>
                   <Home className="h-5 w-5" />
                   Home
                 </a>
-                <a
-                  href="/talk-to-pdf"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-foreground hover:text-foreground"
-                >
+                <a href="/talk-to-pdf" className={getNavItemClass("/talk-to-pdf")}>
                   <Package className="h-5 w-5" />
                   Talk to PDF
                 </a>
-                <a
-                  href="/scrape-site"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                >
+                <a href="/scrape-site" className={getNavItemClass("/scrape-site")}>
                   <Package className="h-5 w-5" />
                   Scrape a site
                 </a>
@@ -148,7 +136,7 @@ function SharedLayout({ children }) {
         </main>
       </div>
     </div>
-  )
+  );
 }
 
 export default SharedLayout;
