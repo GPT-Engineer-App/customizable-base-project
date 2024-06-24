@@ -47,7 +47,7 @@ function SharedLayout({ children }) {
           <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
             <a href="/" className="flex items-center gap-2 font-semibold">
               <Package2 className="h-6 w-6" />
-              <span className="">Acme Inc</span>
+              <span className="">Scopy</span>
             </a>
           </div>
           <div className="flex-1">
@@ -85,7 +85,7 @@ function SharedLayout({ children }) {
               <nav className="grid gap-2 text-lg font-medium">
                 <a href="/" className="flex items-center gap-2 text-lg font-semibold">
                   <Package2 className="h-6 w-6" />
-                  <span className="sr-only">Acme Inc</span>
+                  <span className="sr-only">Scopy</span>
                 </a>
                 <a href="/" className={getNavItemClass("/")}>
                   <Home className="h-5 w-5" />
