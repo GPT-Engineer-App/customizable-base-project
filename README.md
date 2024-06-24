@@ -2,6 +2,8 @@
 
 Create a bare-bones application that I can modify and build on.
 
+
+
 ## Collaborate with GPT Engineer
 
 This is a [gptengineer.app](https://gptengineer.app)-synced repository 🌟🤖
